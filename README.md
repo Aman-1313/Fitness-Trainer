@@ -34,5 +34,6 @@ The main branch will contain the final work to be submitted for each iteration, 
 - [Iteration 2 Worksheet](i2_worksheet.md)
 
 ## A sneak-peak at the final application 
-![This is an image](https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_1.png)
-![This is an image](https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_2.png)
+<img src="https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_1.png" alt="drawing" width="200"/>
+<img src="https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_2.png" alt="drawing" width="200"/>
+
