@@ -32,3 +32,7 @@ The main branch will contain the final work to be submitted for each iteration, 
 
 - [Iteration 1 Worksheet](i1_worksheet.md)
 - [Iteration 2 Worksheet](i2_worksheet.md)
+
+## A sneak-peak at the final application 
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
