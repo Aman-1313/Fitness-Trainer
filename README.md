@@ -35,7 +35,8 @@ The main branch will contain the final work to be submitted for each iteration, 
 
 ## A sneak-peak at the final application 
 ### Homepage
-<img src="https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_1.png" alt="drawing" width="200"/>
-### Schedular 
+<img src="https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_1.png" alt="drawing" width="200"/> 
+
+### Schedular   
 <img src="https://github.com/Aman-1313/Fitness-Trainer/blob/main/Screenshot_2.png" alt="drawing" width="200"/>
 
