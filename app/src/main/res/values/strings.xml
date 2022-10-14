@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PersonalFitnessTrainer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="exercise_array">
+        <item>Push Ups</item>
+        <item>Pull Ups</item>
+        <item>Running</item>
+        <item>Crunches</item>
+        <item>Biceps Curl</item>
+        <item>Triceps Curl</item>
+        <item>Chest Press</item>
+        <item>Planks</item>
+    </string-array>
+</resources>

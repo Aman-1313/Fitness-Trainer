@@ -1,0 +1,41 @@
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+CREATE MEMORY TABLE PUBLIC.exercises(name VARCHAR(100) NOT NULL PRIMARY KEY,category VARCHAR(100) NOT NULL,subCategory VARCHAR(100),calsPerMin DOUBLE NOT NULL)
+CREATE MEMORY TABLE PUBLIC.goals(name VARCHAR(100) NOT NULL PRIMARY KEY)
+CREATE MEMORY TABLE PUBLIC.profiles(email VARCHAR(100) NOT NULL PRIMARY KEY,password VARCHAR(100) NOT NULL,name VARCHAR(100),height DOUBLE,goalType VARCHAR(100) FOREIGN KEY REFERENCES goals(name),goalSubtype VARCHAR(100),goalAmount DOUBLE,avatar VARCHAR(100))
+CREATE MEMORY TABLE PUBLIC.activities(email VARCHAR(100) NOT NULL,startTime BIGINT NOT NULL,endTime BIGINT,complete BOOLEAN,exercise VARCHAR(100) FOREIGN KEY REFERENCES exercises(name),CONSTRAINT act_fkey FOREIGN KEY(email) REFERENCES profiles(email) ON DELETE CASCADE ON UPDATE CASCADE,CONSTRAINT act_pkey PRIMARY KEY(email, startTime))
+CREATE MEMORY TABLE PUBLIC.weights(email VARCHAR(100) NOT NULL,recordTime BIGINT NOT NULL,weight DOUBLE,CONSTRAINT wei_fkey FOREIGN KEY(email) REFERENCES profiles(email) ON DELETE CASCADE ON UPDATE CASCADE,CONSTRAINT wei_pkey PRIMARY KEY(email, recordTime))
+CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
+ALTER USER SA SET LOCAL TRUE
+CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
+GRANT DBA TO SA
+SET WRITE_DELAY 20
+SET FILES SCALE 32
+SET SCHEMA PUBLIC
+INSERT INTO exercises VALUES('Push Ups', 'Anaerobic', 'Upper Body', 8.8184904e0)
+INSERT INTO exercises VALUES('Pull Ups', 'Anaerobic', 'Upper Body', 8.8184904e0)
+INSERT INTO exercises VALUES('Running', 'Cardio', null, 19.6666667e0)
+INSERT INTO exercises VALUES('Crunches', 'Anaerobic', 'Core', 2.2046226e0)
+INSERT INTO exercises VALUES('Biceps Curl', 'Anaerobic', 'Biceps', 2.2046226e0)
+INSERT INTO exercises VALUES('Triceps Curl', 'Anaerobic', 'Triceps', 2.2046226e0)
+INSERT INTO exercises VALUES('Chest Press', 'Anaerobic', 'Chest', 2.2046226e0)
+INSERT INTO exercises VALUES('Planks', 'Anaerobic', 'Legs', 2.2046226e0)
+INSERT INTO goals VALUES('Weight Loss')
+INSERT INTO goals VALUES('Weight Gain')
+INSERT INTO goals VALUES('Exercise Reps')
+INSERT INTO goals VALUES('Running Distance')
+INSERT INTO profiles VALUES('sample@example.abc', 'password', 'Bob', 178.0e0, 'Weight Loss', null, 65.0e0, 'avatar_1')
+INSERT INTO activities VALUES('sample@example.abc', 1650578782000, 1650578782600, false, 'Push Ups')
+INSERT INTO activities VALUES('sample@example.abc',1650492382000, 1650492382600, true, 'Pull Ups')
+INSERT INTO activities VALUES('sample@example.abc',1650405982000, 1650405983000, true, 'Crunches')
+INSERT INTO activities VALUES('sample@example.abc', 1650319582000, 1650319583000, true, 'Cardio')
+INSERT INTO activities VALUES('sample@example.abc', 1650233182000, 1650233183000, false, 'Planks')
+INSERT INTO activities VALUES('sample@example.abc', 1651183202000, 1651183202600, false, 'Push Ups')
+INSERT INTO activities VALUES('sample@example.abc',1651096802000, 1651096802600, true, 'Pull Ups')
+INSERT INTO activities VALUES('sample@example.abc', 1651269602000, 1651269602600, true, 'Crunches')
+INSERT INTO activities VALUES('sample@example.abc', 1651356002000, 1651356002600, true, 'Cardio')
+INSERT INTO activities VALUES('sample@example.abc', 1651356003000, 1651356003600, false, 'Planks')
+INSERT INTO weights VALUES('sample@example.abc', 1645400916000, 80.0e0)
+INSERT INTO weights VALUES('sample@example.abc', 1645289490000, 81.0e0)
+INSERT INTO weights VALUES('sample@example.abc', 1645471187000, 79.5e0)
+INSERT INTO weights VALUES('sample@example.abc', 1645561008000, 78.9e0)
